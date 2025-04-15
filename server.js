@@ -140,6 +140,11 @@ app.get('/scrape', async (req, res) => {
   }
 });
 
+app.get('/ping', (req, res) => {
+  console.log('🔔 Received ping → Scraper is awake!');
+  res.status(200).send('✅ Scraper is alive');
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Scraper running at http://localhost:${PORT}/scrape?name=Cascadia`);
 });
